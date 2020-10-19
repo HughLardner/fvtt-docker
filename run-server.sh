@@ -1,6 +1,6 @@
 #!/bin/sh 
-
-if [! -d "/opt/foundryvtt" ]; then
+DIRECTORY="/opt/foundryvtt"
+if [ ! -d "$DIRECTORY" ]; then
   cd /opt/foundryvtt
   cp /host/foundryvtt*.zip .
   unzip -o foundryvtt*.zip
