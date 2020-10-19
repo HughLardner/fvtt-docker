@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh 
 
 if [! -d "/opt/foundryvtt" ]
   cd /opt/foundryvtt
