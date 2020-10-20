@@ -4,19 +4,22 @@ RUN deluser node && \
     mkdir /opt/foundryvtt && \
     mkdir /data && \
     mkdir /data/foundryvtt && \
+    mkdir /app && \
+    mkdir /app/foundryvtt && \
     adduser --disabled-password fvtt && \
     chown fvtt:fvtt /opt/foundryvtt && \
     chown fvtt:fvtt /data/foundryvtt && \
+    chown fvtt:fvtt /app/foundryvtt && \
     chmod g+s /opt/foundryvtt && \
+    chmod g+s /app/foundryvtt && \
     chmod g+s /data/foundryvtt
 USER fvtt
 
 COPY --chown=fvtt run-server.sh /opt/foundryvtt
 RUN chmod +x /opt/foundryvtt/run-server.sh
 VOLUME /data/foundryvtt
+VOLUME /app/foundryvtt
 VOLUME /host
 EXPOSE 30000
-
-ADD /host/foundryvtt*.tar.gz /opt/foundryvtt
 
 ENTRYPOINT /opt/foundryvtt/run-server.sh
