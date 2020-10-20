@@ -17,4 +17,8 @@ VOLUME /data/foundryvtt
 VOLUME /host
 EXPOSE 30000
 
+RUN cp /host/foundryvtt*.zip /opt/foundryvtt
+    unzip -o /opt/foundryvtt/foundryvtt*.zip
+    rm /opt/foundryvtt/foundryvtt*.zip
+
 ENTRYPOINT /opt/foundryvtt/run-server.sh
