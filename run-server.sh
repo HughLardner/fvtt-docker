@@ -1,5 +1,5 @@
 #!/bin/sh 
-DIR = "."
+DIR="/"
 cd /app/foundryvtt
 if [ "$(ls -A $DIR)" ]; then
   cp /host/foundryvtt*.zip .
