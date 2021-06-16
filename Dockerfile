@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:alpine
 
 RUN deluser node && \
     mkdir /opt/foundryvtt && \
